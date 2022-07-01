@@ -1,0 +1,59 @@
+<div class="mt-4">
+  <div class="row">
+    <div class="col-2">
+      <div class="mx-1 w-auto">
+        <label class="input-group-text">Language:</label>
+      </div>
+    </div>
+    <div class="col-10">
+      <select class="custom-select">
+        <option selected value="cpp">c++</option>
+        <option value="java">java</option>
+        <option value="javascript">javascript</option>
+        <option value="typescript">typescript</option>
+      </select>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-2">
+      <div class="mx-1 w-auto">
+        <label class="input-group-text">Source code:</label>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="form-group">
+        <app-code-editor></app-code-editor>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-2">
+      <label class="input-group-text">Or choose file:</label>
+    </div>
+    <div class="col-10">
+      <input
+        type="file"
+        class="file-input"
+        (change)="onFileSelected($event)"
+        requiredFileType="file/txt"
+        #fileUpload
+      />
+
+      <div>
+        <button class="btn" (click)="fileUpload.click()">
+          <div *ngIf="fileName">
+            <i class="bi bi-file-earmark-code-fill"></i>
+            {{ fileName }}
+          </div>
+          <div *ngIf="!fileName">
+            <i class="bi bi-file-earmark-code"></i>
+            No file uploaded yet.
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btn btn-success">submit</div>
+  </div>
+</div>

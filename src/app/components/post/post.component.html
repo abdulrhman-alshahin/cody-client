@@ -1,0 +1,39 @@
+<div class="card mb-2" [ngClass]="{ 'bg-dark text-white': darkMode }">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      By <span class="fw-bold">{{ post.createrName }}</span> at
+      {{ post.date }}
+    </h6>
+    <p class="card-text">
+      {{ post.content }}
+    </p>
+  </div>
+  <div
+    class="card-footer d-flex justify-content-between align-items-center"
+    *ngIf="withControlers"
+  >
+    <div>
+      <button class="btn" (click)="editRate(1)">
+        <i class="bi bi-chevron-up"></i>
+      </button>
+      <span
+        class="mx-3 fw-bolder"
+        [ngClass]="{
+          'text-success': post.rate > 0,
+          'text-danger': post.rate < 0
+        }"
+      >
+        {{ post.rate }}
+      </span>
+      <button class="btn" (click)="editRate(-1)">
+        <i class="bi bi-chevron-down"></i>
+      </button>
+    </div>
+    <button class="btn mx-2" [routerLink]="[post.id]">
+      {{ post.comments?.length || '0' }}
+      <i class="bi bi-chat-left-text mx-1"></i>
+    </button>
+  </div>
+</div>

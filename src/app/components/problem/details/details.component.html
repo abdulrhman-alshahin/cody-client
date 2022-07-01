@@ -1,0 +1,34 @@
+<p class="my-2">{{ problem.script }}</p>
+<h5 class="mt-4">Input</h5>
+<p>{{ problem.inputExplain }}</p>
+<h5 class="mt-4">Output</h5>
+<p>{{ problem.outputExplain }}</p>
+<h5 class="mt-4">Examples</h5>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Input</th>
+      <th scope="col">output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let example of problem.examples">
+      <td>
+        <div *ngFor="let i of example.input">
+          {{ i }}
+          <br />
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let o of example.output">
+          {{ o }}
+          <br />
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="problem.note">
+  <h5 class="mt-4">note</h5>
+  <p>{{ problem.note }}</p>
+</div>

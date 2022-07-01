@@ -1,0 +1,31 @@
+<div class="card mb-2">
+  <div class="card-header text-capitalize">{{ status }} contest</div>
+  <div class="card-body text-center">
+    <table class="table" *ngIf="contests.length !== 0">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+          <th scope="col">Level</th>
+          <th scope="col">Registereds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="c-pointer"
+          *ngFor="let contest of contests"
+          [routerLink]="[contest.id]"
+          routerLinkActive="router-link-active"
+        >
+          <td>{{ contest.name }}</td>
+          <td>{{ contest.fromDate | date: 'short' }}</td>
+          <td>{{ contest.toDate | date: 'short' }}</td>
+          <td>{{ contest.level }}</td>
+          <td>{{ contest.registereds.length }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 *ngIf="contests.length === 0">No {{ status }} contests</h4>
+  </div>
+</div>

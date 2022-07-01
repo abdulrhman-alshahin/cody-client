@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <table class="table" *ngIf="contestProblems.length !== 0">
+            <thead>
+              <tr>
+                <th scope="col">problem code</th>
+                <th scope="col">problem name</th>
+                <th scope="col">difficutly</th>
+                <th scope="col">solved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="c-pointer"
+                *ngFor="let problem of contestProblems"
+                [routerLink]="'/problems/' + [problem.id] + '/details'"
+                routerLinkActive="router-link-active"
+              >
+                <td>{{ problem.code }}</td>
+                <td>{{ problem.name }}</td>
+                <td>{{ problem.points }}</td>
+                <td>{{ problem.solved }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

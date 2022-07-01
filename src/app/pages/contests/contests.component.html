@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col">
+      <app-contests-card
+        [contests]="currentContests"
+        status="current"
+      ></app-contests-card>
+      <app-contests-card
+        [contests]="upcomingContests"
+        status="upcoming"
+      ></app-contests-card>
+      <app-contests-card
+        [contests]="previousContests"
+        status="previous"
+      ></app-contests-card>
+    </div>
+  </div>
+</div>
