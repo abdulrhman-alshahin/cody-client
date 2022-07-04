@@ -20,7 +20,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { ContestComponent } from './pages/contest/contest.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
     BlogComponent,
     ProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, MonacoEditorModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    MonacoEditorModule,
+    AgGridModule,
+  ],
   providers: [
     {
       provide: MONACO_PATH,

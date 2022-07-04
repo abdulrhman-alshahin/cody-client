@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ProfileComponent implements OnInit {
   user!: IUser;
   username!: string;
+  table!: any;
   constructor(
     private userService: UserService,
     private route: ActivatedRoute
@@ -20,5 +21,6 @@ export class ProfileComponent implements OnInit {
     this.username = this.route.snapshot.params['username'];
     let user = this.userService.getUserByUsername(this.username);
     if (user) this.user = user;
+    console.log(user);
   }
 }

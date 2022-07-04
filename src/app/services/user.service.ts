@@ -14,9 +14,12 @@ export class UserService {
       username: 'ahmadAlmohamad',
       gender: 'male',
       email: 'ahmadAlmohamad@gmail.com',
-      img: '',
+      workTitle: 'full stack developer',
+      location: 'syria - aleppo',
+      img: '../../../assets/personal_user.png',
       dateOfBirth: '',
       points: 3311,
+      phoneNummber: '0940481087',
     },
     {
       id: '2',
@@ -25,9 +28,12 @@ export class UserService {
       username: 'abdulrhmanAlmohamad',
       gender: 'male',
       email: 'abdulrhmanAlmohamad@gmail.com',
-      img: '',
+      workTitle: 'full stack developer',
+      location: 'syria - aleppo',
+      img: '../../../assets/personal_user.png',
       dateOfBirth: '',
       points: 555,
+      phoneNummber: '0940481078',
     },
 
     {
@@ -37,9 +43,12 @@ export class UserService {
       username: 'samiraSaid',
       gender: 'female',
       email: 'samiraSaid@gmail.com',
-      img: '',
+      workTitle: 'full stack developer',
+      location: 'syria - aleppo',
+      img: '../../../assets/personal_user.png',
       dateOfBirth: '',
       points: 5000,
+      phoneNummber: '0940488710',
     },
   ];
 
